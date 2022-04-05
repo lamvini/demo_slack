@@ -38,11 +38,6 @@ jobs:
     environment: production
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Run tests
-      # ... your test step here
     - name: Notify slack success
       if: failure()
       env:
