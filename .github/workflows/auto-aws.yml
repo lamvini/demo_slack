@@ -41,8 +41,9 @@ jobs:
     - name: Notify slack success
       env:
         SLACK_BOT_TOKEN: xoxb-69066443219-3344827845747-eokGQNcx3ybbkvqB9aA74Xun
-      uses: ravsamhq/notify-slack-action@master
+      uses: adamkdean/simple-slack-notify@master
       with:
-        channel: aws-demo
+        channel: '#aws-demo'
         status: SUCCESS
-        color: good
+        failure_text: 'build failed'
+
