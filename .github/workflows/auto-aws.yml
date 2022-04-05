@@ -39,7 +39,6 @@ jobs:
 
     steps:
     - name: Notify slack success
-      if: failure()
       env:
         SLACK_BOT_TOKEN: xoxb-69066443219-3344827845747-eokGQNcx3ybbkvqB9aA74Xun
       uses: voxmedia/github-action-slack-notify-build@v1
