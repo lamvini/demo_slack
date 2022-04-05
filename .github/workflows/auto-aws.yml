@@ -41,7 +41,7 @@ jobs:
     - name: Notify slack success
       env:
         SLACK_BOT_TOKEN: xoxb-69066443219-3344827845747-eokGQNcx3ybbkvqB9aA74Xun
-      uses: abinoda/slack-action@master
+      uses: ravsamhq/notify-slack-action@master
       with:
         channel: aws-demo
         status: SUCCESS
