@@ -38,12 +38,12 @@ jobs:
     environment: production
 
     steps:
-    - name: Notify slack success
+    - name: Notify slack
+      if: failure()
       env:
         SLACK_BOT_TOKEN: xoxb-69066443219-3344827845747-eokGQNcx3ybbkvqB9aA74Xun
-      uses: adamkdean/simple-slack-notify@master
+      uses: pullreminders/slack-action@master
       with:
-        channel: '#aws-demo'
-        status: SUCCESS
-        failure_text: 'build failed'
+        args: '{\"channel\":\"#aws-demo\",\"attachments\":[{\"color\":\"#F32013\",\"blocks\":[{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"*PR Fail:*\"}},{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"*Who?:* \n*Request State:* \"}},{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"<|View Pull Request>\"}}]}]}'
+d'
 
